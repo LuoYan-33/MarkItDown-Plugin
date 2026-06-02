@@ -1,0 +1,24 @@
+{
+  "name": "luoyan-plugins",
+  "description": "LuoYan's Claude Code Plugins Marketplace",
+  "owner": {
+    "name": "LuoYan",
+    "email": "luoyan@example.com"
+  },
+  "plugins": [
+    {
+      "name": "markitdown-plugin",
+      "description": "MarkItDown Plugin for Claude Code - 将各种文件格式转换为 Markdown，支持 OCR",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "LuoYan",
+        "email": "luoyan@example.com"
+      },
+      "homepage": "https://github.com/LuoYan-33/MarkItDown-Plugin",
+      "repository": "https://github.com/LuoYan-33/MarkItDown-Plugin.git",
+      "license": "MIT",
+      "keywords": ["markitdown", "markdown", "converter", "ocr", "pdf", "docx"]
+    }
+  ]
+}
