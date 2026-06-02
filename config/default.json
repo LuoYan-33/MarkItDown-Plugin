@@ -1,0 +1,17 @@
+{
+  "ocr": {
+    "enabled": false,
+    "api_key": "",
+    "model": "gpt-4o",
+    "base_url": "",
+    "prompt": ""
+  },
+  "auto_convert": {
+    "enabled": true,
+    "formats": ["pdf", "docx", "pptx", "xlsx", "xls", "epub", "rtf", "html"]
+  },
+  "mcp": {
+    "host": "127.0.0.1",
+    "port": 3001
+  }
+}
