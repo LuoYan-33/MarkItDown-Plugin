@@ -56,13 +56,20 @@ class PreReadHook:
             # 调用转换工具
             result = await server.mcp.call_tool("convert_file_to_markdown", {"file_path": file_path})
 
+            # 提取结果 - call_tool 返回 (list, list) 元组
             if result and len(result) > 0:
-                markdown = result[0].text
-                logger.info(f"自动转换完成: {file_path}")
-                return markdown
-            else:
-                logger.warning(f"自动转换失败: {file_path}")
-                return None
+                # 第一个元素是结果列表
+                content_list = result[0] if isinstance(result, tuple) else result
+                if content_list and len(content_list) > 0:
+                    content = content_list[0]
+                    if hasattr(content, 'text'):
+                        markdown = content.text
+                    else:
+                        markdown = str(content)
+                    logger.info(f"自动转换完成: {file_path}")
+                    return markdown
+            logger.warning(f"自动转换失败: {file_path}")
+            return None
 
         except Exception as e:
             logger.error(f"pre-read Hook 执行失败: {e}")

@@ -39,11 +39,17 @@ class ConvertSkill:
             else:
                 return f"文件不存在: {file_path}"
 
-            # 提取结果
+            # 提取结果 - call_tool 返回 (list, list) 元组
             if result and len(result) > 0:
-                return result[0].text
-            else:
-                return "转换失败: 未返回结果"
+                # 第一个元素是结果列表
+                content_list = result[0] if isinstance(result, tuple) else result
+                if content_list and len(content_list) > 0:
+                    content = content_list[0]
+                    if hasattr(content, 'text'):
+                        return content.text
+                    else:
+                        return str(content)
+            return "转换失败: 未返回结果"
 
         except Exception as e:
             logger.error(f"执行 /convert 命令失败: {e}")
