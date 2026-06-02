@@ -12,8 +12,24 @@ Claude Code Plugin，提供文件转换功能，支持 OCR。
 
 ## 安装
 
+### 方式一：从市场安装（推荐）
+
 ```bash
-/plugin install markitdown-plugin
+# 添加市场
+claude plugin marketplace add LuoYan-33/claude-plugins-marketplace
+
+# 安装插件
+claude plugin install markitdown-plugin@luoyan-plugins
+```
+
+### 方式二：本地安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/LuoYan-33/MarkItDown-Plugin.git
+
+# 安装插件
+claude plugin install markitdown-plugin-dev
 ```
 
 ## 使用方法
