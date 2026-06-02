@@ -1,0 +1,20 @@
+{
+  "name": "markitdown-plugin-dev",
+  "description": "Development marketplace for MarkItDown Plugin",
+  "owner": {
+    "name": "LuoYan",
+    "email": "luoyan@example.com"
+  },
+  "plugins": [
+    {
+      "name": "markitdown-plugin",
+      "description": "MarkItDown Plugin for Claude Code - 将各种文件格式转换为 Markdown，支持 OCR",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "LuoYan",
+        "email": "luoyan@example.com"
+      }
+    }
+  ]
+}

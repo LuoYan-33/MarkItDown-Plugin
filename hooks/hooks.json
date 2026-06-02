@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"${CLAUDE_PLUGIN_ROOT}/hooks/pre_read.py\" \"${TOOL_INPUT_file_path}\"",
+            "async": false
+          }
+        ]
+      }
+    ]
+  }
+}

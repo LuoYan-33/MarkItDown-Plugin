@@ -69,8 +69,16 @@ class PreReadHook:
             return None
 
 # Hook 入口
-hook = PreReadHook()
+if __name__ == "__main__":
+    import asyncio
 
-async def main(file_path: str) -> str:
-    """Hook 入口函数"""
-    return await hook.execute(file_path)
+    if len(sys.argv) < 2:
+        print("用法: python pre_read.py <文件路径>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    hook = PreReadHook()
+    result = asyncio.run(hook.execute(file_path))
+
+    if result:
+        print(result)
